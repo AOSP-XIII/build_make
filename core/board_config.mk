@@ -272,6 +272,8 @@ ifeq ($(TARGET_CPU_ABI)$(TARGET_ARCH_SUITE),)
   $(error TARGET_CPU_ABI not defined by board config: $(board_config_mk))
 endif
 
+-include vendor/extra/BoardConfigExtra.mk
+
 ifneq ($(MALLOC_IMPL),)
   $(warning *** Unsupported option MALLOC_IMPL defined by board config: $(board_config_mk).)
   $(error Use `MALLOC_SVELTE := true` to configure jemalloc for low-memory)
